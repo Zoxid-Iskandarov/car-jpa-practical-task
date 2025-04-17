@@ -11,6 +11,7 @@ import com.walking.carpractice.model.model.request.CreateModelRequest;
 import com.walking.carpractice.model.model.request.UpdateModelRequest;
 import com.walking.carpractice.model.user.request.CreateUserRequest;
 import com.walking.carpractice.model.user.request.UpdateUserRequest;
+import com.walking.carpractice.servlet.ErrorHandlingServlet;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpFilter;
@@ -49,7 +50,11 @@ public class RequestJsonDeserializerFilter extends HttpFilter {
 
             request.setAttribute(POJO_REQUEST_BODY, pojoBody);
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка десериализации запроса", e);
+            request.setAttribute(ErrorHandlingServlet.STATUS_CODE_ATTRIBUTE_KEY, 400);
+            request.setAttribute(ErrorHandlingServlet.ERROR_MESSAGE_ATTRIBUTE_KEY, "Ошибка десериализации тела запроса");
+
+            request.getRequestDispatcher("/error").forward(request, response);
+            return;
         }
 
         chain.doFilter(request, response);

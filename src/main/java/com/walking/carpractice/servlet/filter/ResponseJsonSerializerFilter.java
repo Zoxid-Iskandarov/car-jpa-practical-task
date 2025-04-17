@@ -2,6 +2,7 @@ package com.walking.carpractice.servlet.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.walking.carpractice.constant.ContextAttributeNames;
+import com.walking.carpractice.exception.CommonAppException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpFilter;
@@ -37,7 +38,7 @@ public class ResponseJsonSerializerFilter extends HttpFilter {
 
             response.setContentType("application/json");
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка сериализации ответа", e);
+            throw new CommonAppException("Ошибка формирования тела ответа", e);
         }
     }
 }

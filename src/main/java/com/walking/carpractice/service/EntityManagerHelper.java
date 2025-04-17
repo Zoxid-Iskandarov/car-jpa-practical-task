@@ -1,5 +1,6 @@
 package com.walking.carpractice.service;
 
+import com.walking.carpractice.exception.CommonAppException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -42,7 +43,7 @@ public class EntityManagerHelper {
                 throw runtimeException;
             }
 
-            throw new RuntimeException("Ошибка при обработке транзакции", e);
+            throw new CommonAppException("Ошибка при обработке транзакции", e);
         }
     }
 
