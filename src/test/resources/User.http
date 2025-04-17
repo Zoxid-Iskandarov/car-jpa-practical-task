@@ -1,0 +1,32 @@
+### Зарегистрироваться
+POST http://localhost:8085/signUp
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "password": "Qwerty"
+}
+
+### Авторизоваться
+POST http://localhost:8085/auth
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=Qwerty
+
+### Выйти из системы
+DELETE http://localhost:8085/auth
+
+### Получить пользователя по id
+GET http://localhost:8085/user?id=1
+
+### Обновить информацию о себе
+PUT http://localhost:8085/user
+Content-Type: application/json
+
+{
+  "firstName": "Petr",
+  "lastName": "Ivanov",
+  "carIds": [2, 3]
+}

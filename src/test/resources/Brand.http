@@ -1,0 +1,30 @@
+### Получить марку по id
+GET http://localhost:8085/brand?id=1
+
+### Создать марку
+POST http://localhost:8085/brand
+Content-Type: application/json
+
+{
+  "name": "BMQ"
+}
+
+### Создать марку
+POST http://localhost:8085/brand
+Content-Type: application/json
+
+{
+  "name": "Audi"
+}
+
+### Обновить марку
+PUT http://localhost:8085/brand
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "BMW"
+}
+
+### Удалить марку по id
+DELETE http://localhost:8085/brand?id=2

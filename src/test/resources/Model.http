@@ -1,0 +1,35 @@
+### Получить модель по id
+GET http://localhost:8085/model?id=1
+
+### Создать модель
+POST http://localhost:8085/model
+Content-Type: application/json
+
+{
+  "name": "X6",
+  "brandId": 1
+}
+
+### Создать модель
+POST http://localhost:8085/model
+Content-Type: application/json
+
+{
+  "name": "X3",
+  "brandId": 1
+}
+
+### Обновить модель
+PUT http://localhost:8085/model
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "X7"
+}
+
+### Удалить модель по id
+DELETE http://localhost:8085/model?id=2
+
+### Получение всех моделей автомобиля по марке
+GET http://localhost:8085/model/search?brandId=1

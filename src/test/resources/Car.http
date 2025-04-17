@@ -1,0 +1,43 @@
+### Получить машину по id
+GET http://localhost:8085/car?id=1
+
+### Создать машину
+POST http://localhost:8085/car
+Content-Type: application/json
+
+{
+  "number": "RR-111-RR",
+  "year": 2015,
+  "color": "yellow",
+  "actualTechnicalInspection": true,
+  "modelId": 1
+}
+
+### Создать машину
+POST http://localhost:8085/car
+Content-Type: application/json
+
+{
+  "number": "RR-222-RR",
+  "year": 2015,
+  "color": "yellow",
+  "actualTechnicalInspection": true,
+  "modelId": 3
+}
+
+### Обновить машину
+PUT http://localhost:8085/car
+Content-Type: application/json
+
+{
+  "id": 3,
+  "number": "RR-111-RR",
+  "color": "green",
+  "actualTechnicalInspection": false
+}
+
+### Удалить машину по id
+DELETE http://localhost:8085/car?id=1
+
+### Получения всех автомобилей текущего пользователя
+GET http://localhost:8085/car/search
