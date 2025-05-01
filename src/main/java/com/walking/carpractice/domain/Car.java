@@ -24,7 +24,7 @@ public class Car {
     @Column(name = "actual_technical_inspection", nullable = false)
     private boolean actualTechnicalInspection;
 
-    @ManyToMany(mappedBy = "cars", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "cars")
     private List<User> owners = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

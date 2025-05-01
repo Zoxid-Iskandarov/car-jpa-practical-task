@@ -54,12 +54,20 @@
         <servlet-class>com.walking.carpractice.servlet.CarSearchServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>TechnicalInspectionServlet</servlet-name>
+        <servlet-class>com.walking.carpractice.servlet.TechnicalInspectionServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>UserServlet</servlet-name>
         <servlet-class>com.walking.carpractice.servlet.UserServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BrandServlet</servlet-name>
         <servlet-class>com.walking.carpractice.servlet.BrandServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BrandStatisticsServlet</servlet-name>
+        <servlet-class>com.walking.carpractice.servlet.BrandStatisticsServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ModelServlet</servlet-name>
@@ -107,12 +115,20 @@
         <url-pattern>/car/search</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>TechnicalInspectionServlet</servlet-name>
+        <url-pattern>/technical-inspection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BrandServlet</servlet-name>
         <url-pattern>/brand</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BrandStatisticsServlet</servlet-name>
+        <url-pattern>/brand/statistics</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ModelServlet</servlet-name>

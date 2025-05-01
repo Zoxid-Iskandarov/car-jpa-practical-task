@@ -23,7 +23,7 @@ public class UserService {
     }
 
     public User getById(Long id) {
-        return entityManagerHelper.runTransaction(em -> em.find(User.class, id));
+        return entityManagerHelper.runTransaction(em -> userRepository.findById(id, em));
     }
 
     public User auth(String username, String password) {
@@ -55,7 +55,7 @@ public class UserService {
 
     public User update(User user, List<Long> carsIds) {
         return entityManagerHelper.runTransaction(em -> {
-            var oldUser = em.find(User.class, user.getId());
+            var oldUser = userRepository.findById(user.getId(), em);
 
             oldUser.setFirstName(user.getFirstName());
             oldUser.setLastName(user.getLastName());

@@ -1,4 +1,4 @@
-package com.walking.carpractice.model.user.request;
+package com.walking.carpractice.model.dto.user.request;
 
 import java.util.ArrayList;
 import java.util.List;

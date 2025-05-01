@@ -4,8 +4,8 @@ import com.walking.carpractice.constant.ContextAttributeNames;
 import com.walking.carpractice.converter.model.CreateModelRequestConverter;
 import com.walking.carpractice.converter.model.ModelConverter;
 import com.walking.carpractice.converter.model.UpdateModelRequestConverter;
-import com.walking.carpractice.model.model.request.CreateModelRequest;
-import com.walking.carpractice.model.model.request.UpdateModelRequest;
+import com.walking.carpractice.model.dto.model.request.CreateModelRequest;
+import com.walking.carpractice.model.dto.model.request.UpdateModelRequest;
 import com.walking.carpractice.service.ModelService;
 import com.walking.carpractice.servlet.filter.RequestJsonDeserializerFilter;
 import com.walking.carpractice.servlet.filter.ResponseJsonSerializerFilter;
@@ -40,7 +40,7 @@ public class ModelServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var id = Long.parseLong(request.getParameter("id"));
+        var id = Long.valueOf(request.getParameter("id"));
 
         var model = modelService.getById(id);
         var modelDto = modelConverter.convert(model);
@@ -72,7 +72,7 @@ public class ModelServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var id = Long.parseLong(request.getParameter("id"));
+        var id = Long.valueOf(request.getParameter("id"));
         modelService.delete(id);
     }
 }

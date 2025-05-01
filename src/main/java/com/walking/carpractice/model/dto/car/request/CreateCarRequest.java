@@ -1,4 +1,4 @@
-package com.walking.carpractice.model.car.request;
+package com.walking.carpractice.model.dto.car.request;
 
 public class CreateCarRequest {
     private String number;

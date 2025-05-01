@@ -1,4 +1,4 @@
-package com.walking.carpractice.model.brand.request;
+package com.walking.carpractice.model.dto.brand.request;
 
 public class CreateBrandRequest {
     private String name;

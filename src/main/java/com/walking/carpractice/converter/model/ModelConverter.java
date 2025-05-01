@@ -2,7 +2,7 @@ package com.walking.carpractice.converter.model;
 
 import com.walking.carpractice.converter.AbstractConverter;
 import com.walking.carpractice.domain.Model;
-import com.walking.carpractice.model.model.ModelDto;
+import com.walking.carpractice.model.dto.model.ModelDto;
 
 import java.time.ZoneOffset;
 

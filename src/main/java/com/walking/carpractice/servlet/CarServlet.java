@@ -4,8 +4,8 @@ import com.walking.carpractice.constant.ContextAttributeNames;
 import com.walking.carpractice.converter.car.CarConverter;
 import com.walking.carpractice.converter.car.CreateCarRequestConverter;
 import com.walking.carpractice.converter.car.UpdateCarRequestConverter;
-import com.walking.carpractice.model.car.request.CreateCarRequest;
-import com.walking.carpractice.model.car.request.UpdateCarRequest;
+import com.walking.carpractice.model.dto.car.request.CreateCarRequest;
+import com.walking.carpractice.model.dto.car.request.UpdateCarRequest;
 import com.walking.carpractice.service.CarService;
 import com.walking.carpractice.servlet.filter.RequestJsonDeserializerFilter;
 import com.walking.carpractice.servlet.filter.ResponseJsonSerializerFilter;
@@ -40,7 +40,7 @@ public class CarServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var id = Long.parseLong(request.getParameter("id"));
+        var id = Long.valueOf(request.getParameter("id"));
 
         var car = carService.getById(id);
         var carDto = carConverter.convert(car);

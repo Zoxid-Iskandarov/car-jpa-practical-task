@@ -3,7 +3,7 @@ package com.walking.carpractice.servlet;
 import com.walking.carpractice.constant.ContextAttributeNames;
 import com.walking.carpractice.converter.user.UpdateUserRequestConverter;
 import com.walking.carpractice.converter.user.UserConverter;
-import com.walking.carpractice.model.user.request.UpdateUserRequest;
+import com.walking.carpractice.model.dto.user.request.UpdateUserRequest;
 import com.walking.carpractice.service.UserService;
 import com.walking.carpractice.servlet.filter.RequestJsonDeserializerFilter;
 import com.walking.carpractice.servlet.filter.ResponseJsonSerializerFilter;
@@ -34,7 +34,7 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var id = Long.parseLong(request.getParameter("id"));
+        var id = Long.valueOf(request.getParameter("id"));
 
         var user = userService.getById(id);
         var userDto = userConverter.convert(user);

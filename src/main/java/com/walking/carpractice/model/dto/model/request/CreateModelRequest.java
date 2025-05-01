@@ -1,4 +1,4 @@
-package com.walking.carpractice.model.model.request;
+package com.walking.carpractice.model.dto.model.request;
 
 public class CreateModelRequest {
     private String name;

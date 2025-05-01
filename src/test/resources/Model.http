@@ -29,7 +29,7 @@ Content-Type: application/json
 }
 
 ### Удалить модель по id
-DELETE http://localhost:8085/model?id=2
+DELETE http://localhost:8085/model?id=1
 
 ### Получение всех моделей автомобиля по марке
 GET http://localhost:8085/model/search?brandId=1

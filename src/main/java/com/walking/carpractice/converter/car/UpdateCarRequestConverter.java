@@ -2,7 +2,7 @@ package com.walking.carpractice.converter.car;
 
 import com.walking.carpractice.converter.AbstractConverter;
 import com.walking.carpractice.domain.Car;
-import com.walking.carpractice.model.car.request.UpdateCarRequest;
+import com.walking.carpractice.model.dto.car.request.UpdateCarRequest;
 
 public class UpdateCarRequestConverter extends AbstractConverter<UpdateCarRequest, Car> {
     @Override

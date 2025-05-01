@@ -1,13 +1,11 @@
-package com.walking.carpractice.model.model;
+package com.walking.carpractice.model.dto.brand;
 
 import java.time.ZonedDateTime;
 
-public class ModelDto {
+public class BrandDto {
     private Long id;
 
     private String name;
-
-    private Long brandId;
 
     private ZonedDateTime created;
 
@@ -27,14 +25,6 @@ public class ModelDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
     }
 
     public ZonedDateTime getCreated() {

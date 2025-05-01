@@ -26,7 +26,7 @@ public class ModelSearchServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var brandId = Long.parseLong(request.getParameter("brandId"));
+        var brandId = Long.valueOf(request.getParameter("brandId"));
 
         var models = modelService.getAllByBrandId(brandId);
         var modelDtos = modelConverter.convert(models);

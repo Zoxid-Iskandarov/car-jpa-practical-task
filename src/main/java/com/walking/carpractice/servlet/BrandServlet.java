@@ -4,8 +4,8 @@ import com.walking.carpractice.constant.ContextAttributeNames;
 import com.walking.carpractice.converter.brand.BrandConverter;
 import com.walking.carpractice.converter.brand.CreateBrandRequestConverter;
 import com.walking.carpractice.converter.brand.UpdateBrandRequestConverter;
-import com.walking.carpractice.model.brand.request.CreateBrandRequest;
-import com.walking.carpractice.model.brand.request.UpdateBrandRequest;
+import com.walking.carpractice.model.dto.brand.request.CreateBrandRequest;
+import com.walking.carpractice.model.dto.brand.request.UpdateBrandRequest;
 import com.walking.carpractice.service.BrandService;
 import com.walking.carpractice.servlet.filter.RequestJsonDeserializerFilter;
 import com.walking.carpractice.servlet.filter.ResponseJsonSerializerFilter;
@@ -39,7 +39,7 @@ public class BrandServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var id = Long.parseLong(request.getParameter("id"));
+        var id = Long.valueOf(request.getParameter("id"));
 
         var brand = brandService.getById(id);
         var brandDto = brandConverter.convert(brand);
@@ -71,7 +71,7 @@ public class BrandServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        var id = Long.parseLong(request.getParameter("id"));
+        var id = Long.valueOf(request.getParameter("id"));
 
         brandService.delete(id);
     }

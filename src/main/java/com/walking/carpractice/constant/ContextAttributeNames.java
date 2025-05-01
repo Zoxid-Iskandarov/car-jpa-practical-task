@@ -10,6 +10,7 @@ public class ContextAttributeNames {
     public static final String BRAND_CONVERTER = "brandConverter";
     public static final String CREATE_BRAND_REQUEST_CONVERTER = "createBrandRequestConverter";
     public static final String UPDATE_BRAND_REQUEST_CONVERTER = "updateBrandRequestConverter";
+    public static final String BRAND_STATISTICS_CONVERTER = "brandStatisticsConverter";
     public static final String MODEL_CONVERTER = "modelConverter";
     public static final String CREATE_MODEL_REQUEST_CONVERTER = "createModelRequestConverter";
     public static final String UPDATE_MODEL_REQUEST_CONVERTER = "updateModelRequestConverter";

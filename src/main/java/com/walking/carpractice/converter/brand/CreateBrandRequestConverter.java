@@ -2,7 +2,7 @@ package com.walking.carpractice.converter.brand;
 
 import com.walking.carpractice.converter.AbstractConverter;
 import com.walking.carpractice.domain.Brand;
-import com.walking.carpractice.model.brand.request.CreateBrandRequest;
+import com.walking.carpractice.model.dto.brand.request.CreateBrandRequest;
 
 public class CreateBrandRequestConverter extends AbstractConverter<CreateBrandRequest, Brand> {
     @Override

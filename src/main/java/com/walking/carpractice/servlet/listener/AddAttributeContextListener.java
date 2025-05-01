@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.walking.carpractice.constant.ContextAttributeNames;
 import com.walking.carpractice.converter.brand.BrandConverter;
+import com.walking.carpractice.converter.brand.BrandStatisticsConverter;
 import com.walking.carpractice.converter.brand.CreateBrandRequestConverter;
 import com.walking.carpractice.converter.brand.UpdateBrandRequestConverter;
 import com.walking.carpractice.converter.car.CarConverter;
@@ -67,6 +68,9 @@ public class AddAttributeContextListener implements ServletContextListener {
         var updateBrandRequestConverter = new UpdateBrandRequestConverter();
         servletContext.setAttribute(ContextAttributeNames.UPDATE_BRAND_REQUEST_CONVERTER, updateBrandRequestConverter);
 
+        var brandStatisticsConverter = new BrandStatisticsConverter();
+        servletContext.setAttribute(ContextAttributeNames.BRAND_STATISTICS_CONVERTER, brandStatisticsConverter);
+
         var modelConverter = new ModelConverter();
         servletContext.setAttribute(ContextAttributeNames.MODEL_CONVERTER, modelConverter);
 
@@ -100,7 +104,7 @@ public class AddAttributeContextListener implements ServletContextListener {
         var userService = new UserService(entityManagerHelper, userRepository, carRepository, encodingService);
         servletContext.setAttribute(ContextAttributeNames.USER_SERVICE, userService);
 
-        var brandService = new BrandService(entityManagerHelper);
+        var brandService = new BrandService(entityManagerHelper, modelRepository);
         servletContext.setAttribute(ContextAttributeNames.BRAND_SERVICE, brandService);
 
         var modelService = new ModelService(entityManagerHelper, modelRepository);

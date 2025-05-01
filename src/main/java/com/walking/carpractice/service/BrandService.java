@@ -1,12 +1,18 @@
 package com.walking.carpractice.service;
 
 import com.walking.carpractice.domain.Brand;
+import com.walking.carpractice.model.projection.BrandStatistics;
+import com.walking.carpractice.repository.ModelRepository;
+
+import java.util.List;
 
 public class BrandService {
     private final EntityManagerHelper entityManagerHelper;
+    private final ModelRepository modelRepository;
 
-    public BrandService(EntityManagerHelper entityManagerHelper) {
+    public BrandService(EntityManagerHelper entityManagerHelper, ModelRepository modelRepository) {
         this.entityManagerHelper = entityManagerHelper;
+        this.modelRepository = modelRepository;
     }
 
     public Brand getById(Long id) {
@@ -36,5 +42,9 @@ public class BrandService {
             var brand = em.find(Brand.class, id);
             em.remove(brand);
         });
+    }
+
+    public List<BrandStatistics> getStatistics() {
+        return entityManagerHelper.runTransaction(modelRepository::countGropingByBrandId);
     }
 }

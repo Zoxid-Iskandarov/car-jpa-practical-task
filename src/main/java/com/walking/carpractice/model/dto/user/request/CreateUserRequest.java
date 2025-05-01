@@ -1,4 +1,4 @@
-package com.walking.carpractice.model.user.request;
+package com.walking.carpractice.model.dto.user.request;
 
 public class CreateUserRequest {
     private String username;

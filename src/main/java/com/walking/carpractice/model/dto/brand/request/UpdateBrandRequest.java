@@ -1,6 +1,6 @@
-package com.walking.carpractice.model.model.request;
+package com.walking.carpractice.model.dto.brand.request;
 
-public class UpdateModelRequest {
+public class UpdateBrandRequest {
     private Long id;
 
     private String name;

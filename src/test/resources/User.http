@@ -9,6 +9,17 @@ Content-Type: application/json
   "password": "Qwerty"
 }
 
+### Зарегистрироваться
+POST http://localhost:8085/signUp
+Content-Type: application/json
+
+{
+  "username": "admin1",
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "password": "Qwerty"
+}
+
 ### Авторизоваться
 POST http://localhost:8085/auth
 Content-Type: application/x-www-form-urlencoded
@@ -28,5 +39,5 @@ Content-Type: application/json
 {
   "firstName": "Petr",
   "lastName": "Ivanov",
-  "carIds": [2, 3]
+  "carIds": [1, 2]
 }

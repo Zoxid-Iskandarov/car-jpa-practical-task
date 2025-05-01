@@ -3,10 +3,9 @@ package com.walking.carpractice.converter.car;
 import com.walking.carpractice.converter.AbstractConverter;
 import com.walking.carpractice.domain.Car;
 import com.walking.carpractice.domain.User;
-import com.walking.carpractice.model.car.CarDto;
+import com.walking.carpractice.model.dto.car.CarDto;
 
 import java.time.ZoneOffset;
-import java.util.List;
 
 public class CarConverter extends AbstractConverter<Car, CarDto> {
     @Override

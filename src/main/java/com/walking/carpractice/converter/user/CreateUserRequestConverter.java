@@ -2,7 +2,7 @@ package com.walking.carpractice.converter.user;
 
 import com.walking.carpractice.converter.AbstractConverter;
 import com.walking.carpractice.domain.User;
-import com.walking.carpractice.model.user.request.CreateUserRequest;
+import com.walking.carpractice.model.dto.user.request.CreateUserRequest;
 
 public class CreateUserRequestConverter extends AbstractConverter<CreateUserRequest, User> {
     @Override

@@ -22,7 +22,7 @@ Content-Type: application/json
   "year": 2015,
   "color": "yellow",
   "actualTechnicalInspection": true,
-  "modelId": 3
+  "modelId": 2
 }
 
 ### Обновить машину
@@ -30,14 +30,17 @@ PUT http://localhost:8085/car
 Content-Type: application/json
 
 {
-  "id": 3,
+  "id": 1,
   "number": "RR-111-RR",
   "color": "green",
   "actualTechnicalInspection": false
 }
 
 ### Удалить машину по id
-DELETE http://localhost:8085/car?id=1
+DELETE http://localhost:8085/car?id=2
 
 ### Получения всех автомобилей текущего пользователя
 GET http://localhost:8085/car/search
+
+### Сбросить техосмотр для всех машин старше указанного года
+PUT http://localhost:8085/technical-inspection?year=2016

@@ -27,4 +27,7 @@ Content-Type: application/json
 }
 
 ### Удалить марку по id
-DELETE http://localhost:8085/brand?id=2
+DELETE http://localhost:8085/brand?id=1
+
+### Получить число моделей по маркам
+GET http://localhost:8085/brand/statistics

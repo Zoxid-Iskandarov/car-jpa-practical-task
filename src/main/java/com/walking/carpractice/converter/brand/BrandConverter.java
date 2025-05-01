@@ -2,7 +2,7 @@ package com.walking.carpractice.converter.brand;
 
 import com.walking.carpractice.converter.AbstractConverter;
 import com.walking.carpractice.domain.Brand;
-import com.walking.carpractice.model.brand.BrandDto;
+import com.walking.carpractice.model.dto.brand.BrandDto;
 
 import java.time.ZoneOffset;
 

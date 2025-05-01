@@ -1,4 +1,4 @@
-package com.walking.carpractice.model.user;
+package com.walking.carpractice.model.dto.user;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
